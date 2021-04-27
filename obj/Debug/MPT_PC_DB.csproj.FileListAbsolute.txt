@@ -1,0 +1,12 @@
+C:\Users\nikit\source\repos\MPT_PC_DB\bin\Debug\MPT_PC_DB.exe.config
+C:\Users\nikit\source\repos\MPT_PC_DB\bin\Debug\MPT_PC_DB.exe
+C:\Users\nikit\source\repos\MPT_PC_DB\bin\Debug\MPT_PC_DB.pdb
+C:\Users\nikit\source\repos\MPT_PC_DB\obj\Debug\MPT_PC_DB.csprojAssemblyReference.cache
+C:\Users\nikit\source\repos\MPT_PC_DB\obj\Debug\MPT_PC_DB.Properties.Resources.resources
+C:\Users\nikit\source\repos\MPT_PC_DB\obj\Debug\MPT_PC_DB.csproj.GenerateResource.cache
+C:\Users\nikit\source\repos\MPT_PC_DB\obj\Debug\MPT_PC_DB.csproj.CoreCompileInputs.cache
+C:\Users\nikit\source\repos\MPT_PC_DB\obj\Debug\MPT_PC_DB.exe
+C:\Users\nikit\source\repos\MPT_PC_DB\obj\Debug\MPT_PC_DB.pdb
+C:\Users\nikit\source\repos\MPT_PC_DB\bin\Debug\QRCoder.dll
+C:\Users\nikit\source\repos\MPT_PC_DB\obj\Debug\MPT_PC_DB.csproj.CopyComplete
+C:\Users\nikit\source\repos\MPT_PC_DB\obj\Debug\MPT_PC_DB.MainForm.resources
