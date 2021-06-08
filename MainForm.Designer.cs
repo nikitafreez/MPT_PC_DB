@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.FilterButton = new System.Windows.Forms.Button();
+            this.clearAllBoxButton = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.updateBtn = new System.Windows.Forms.Button();
             this.buildingNameBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,20 +54,20 @@
             this.saveBtn = new System.Windows.Forms.Button();
             this.All_PC_dataFrid = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.createForAllAndSave = new System.Windows.Forms.Button();
+            this.PCidBox = new System.Windows.Forms.ComboBox();
+            this.saveQR = new System.Windows.Forms.Button();
             this.QRCodeBox = new System.Windows.Forms.PictureBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.saveQRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createQRButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.saveQR = new System.Windows.Forms.Button();
-            this.updateBtn = new System.Windows.Forms.Button();
-            this.deleteBtn = new System.Windows.Forms.Button();
-            this.PCidBox = new System.Windows.Forms.ComboBox();
-            this.clearAllBoxButton = new System.Windows.Forms.Button();
-            this.createForAllAndSave = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.All_PC_dataFrid)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QRCodeBox)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -77,6 +82,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.FilterButton);
             this.tabPage1.Controls.Add(this.clearAllBoxButton);
             this.tabPage1.Controls.Add(this.deleteBtn);
             this.tabPage1.Controls.Add(this.updateBtn);
@@ -106,6 +112,46 @@
             this.tabPage1.Text = "Информация о ПК";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // FilterButton
+            // 
+            this.FilterButton.Location = new System.Drawing.Point(356, 132);
+            this.FilterButton.Name = "FilterButton";
+            this.FilterButton.Size = new System.Drawing.Size(142, 52);
+            this.FilterButton.TabIndex = 22;
+            this.FilterButton.Text = "Фильтровать по зданию";
+            this.FilterButton.UseVisualStyleBackColor = true;
+            this.FilterButton.Click += new System.EventHandler(this.FilterButton_Click);
+            // 
+            // clearAllBoxButton
+            // 
+            this.clearAllBoxButton.Location = new System.Drawing.Point(14, 7);
+            this.clearAllBoxButton.Name = "clearAllBoxButton";
+            this.clearAllBoxButton.Size = new System.Drawing.Size(140, 27);
+            this.clearAllBoxButton.TabIndex = 21;
+            this.clearAllBoxButton.Text = "Очистить поля";
+            this.clearAllBoxButton.UseVisualStyleBackColor = true;
+            this.clearAllBoxButton.Click += new System.EventHandler(this.clearAllBoxButton_Click);
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(230, 157);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(103, 27);
+            this.deleteBtn.TabIndex = 20;
+            this.deleteBtn.Text = "Удалить";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // updateBtn
+            // 
+            this.updateBtn.Location = new System.Drawing.Point(121, 157);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(103, 27);
+            this.updateBtn.TabIndex = 19;
+            this.updateBtn.Text = "Изменить";
+            this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
+            // 
             // buildingNameBox
             // 
             this.buildingNameBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -113,7 +159,7 @@
             this.buildingNameBox.Items.AddRange(new object[] {
             "Нежинская, 7",
             "Нахимовский проспект, 21"});
-            this.buildingNameBox.Location = new System.Drawing.Point(356, 100);
+            this.buildingNameBox.Location = new System.Drawing.Point(356, 53);
             this.buildingNameBox.Name = "buildingNameBox";
             this.buildingNameBox.Size = new System.Drawing.Size(142, 24);
             this.buildingNameBox.TabIndex = 18;
@@ -130,7 +176,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(530, 37);
+            this.label8.Location = new System.Drawing.Point(353, 84);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(64, 17);
             this.label8.TabIndex = 16;
@@ -139,7 +185,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(353, 84);
+            this.label5.Location = new System.Drawing.Point(353, 37);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 17);
             this.label5.TabIndex = 15;
@@ -148,7 +194,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(353, 37);
+            this.label6.Location = new System.Drawing.Point(530, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(28, 17);
             this.label6.TabIndex = 14;
@@ -200,14 +246,14 @@
             // 
             // cabinetNumBox
             // 
-            this.cabinetNumBox.Location = new System.Drawing.Point(533, 57);
+            this.cabinetNumBox.Location = new System.Drawing.Point(356, 104);
             this.cabinetNumBox.Name = "cabinetNumBox";
             this.cabinetNumBox.Size = new System.Drawing.Size(142, 22);
             this.cabinetNumBox.TabIndex = 8;
             // 
             // OSBox
             // 
-            this.OSBox.Location = new System.Drawing.Point(356, 57);
+            this.OSBox.Location = new System.Drawing.Point(533, 57);
             this.OSBox.Name = "OSBox";
             this.OSBox.Size = new System.Drawing.Size(142, 22);
             this.OSBox.TabIndex = 6;
@@ -282,14 +328,61 @@
             this.tabPage2.Text = "Создание QR-кода";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // createForAllAndSave
+            // 
+            this.createForAllAndSave.Location = new System.Drawing.Point(96, 252);
+            this.createForAllAndSave.Name = "createForAllAndSave";
+            this.createForAllAndSave.Size = new System.Drawing.Size(134, 72);
+            this.createForAllAndSave.TabIndex = 16;
+            this.createForAllAndSave.Text = "Создать QR для всех ПК и сохранить";
+            this.createForAllAndSave.UseVisualStyleBackColor = true;
+            this.createForAllAndSave.Click += new System.EventHandler(this.createForAllAndSave_Click);
+            // 
+            // PCidBox
+            // 
+            this.PCidBox.FormattingEnabled = true;
+            this.PCidBox.Location = new System.Drawing.Point(105, 183);
+            this.PCidBox.Name = "PCidBox";
+            this.PCidBox.Size = new System.Drawing.Size(114, 24);
+            this.PCidBox.TabIndex = 15;
+            // 
+            // saveQR
+            // 
+            this.saveQR.Enabled = false;
+            this.saveQR.Location = new System.Drawing.Point(530, 299);
+            this.saveQR.Name = "saveQR";
+            this.saveQR.Size = new System.Drawing.Size(114, 33);
+            this.saveQR.TabIndex = 14;
+            this.saveQR.Text = "Сохранить QR";
+            this.saveQR.UseVisualStyleBackColor = true;
+            this.saveQR.Click += new System.EventHandler(this.saveQR_Click);
+            // 
             // QRCodeBox
             // 
             this.QRCodeBox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.QRCodeBox.Location = new System.Drawing.Point(454, 50);
+            this.QRCodeBox.ContextMenuStrip = this.contextMenuStrip1;
+            this.QRCodeBox.Location = new System.Drawing.Point(442, 17);
             this.QRCodeBox.Name = "QRCodeBox";
-            this.QRCodeBox.Size = new System.Drawing.Size(258, 243);
+            this.QRCodeBox.Size = new System.Drawing.Size(280, 280);
             this.QRCodeBox.TabIndex = 13;
             this.QRCodeBox.TabStop = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Enabled = false;
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveQRToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(177, 28);
+            // 
+            // saveQRToolStripMenuItem
+            // 
+            this.saveQRToolStripMenuItem.Enabled = false;
+            this.saveQRToolStripMenuItem.Name = "saveQRToolStripMenuItem";
+            this.saveQRToolStripMenuItem.Size = new System.Drawing.Size(176, 24);
+            this.saveQRToolStripMenuItem.Text = "Созранить QR";
+            this.saveQRToolStripMenuItem.Click += new System.EventHandler(this.saveQR_Click);
             // 
             // createQRButton
             // 
@@ -310,73 +403,17 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "ID ПК";
             // 
-            // saveQR
-            // 
-            this.saveQR.Enabled = false;
-            this.saveQR.Location = new System.Drawing.Point(530, 299);
-            this.saveQR.Name = "saveQR";
-            this.saveQR.Size = new System.Drawing.Size(114, 33);
-            this.saveQR.TabIndex = 14;
-            this.saveQR.Text = "Сохранить QR";
-            this.saveQR.UseVisualStyleBackColor = true;
-            this.saveQR.Click += new System.EventHandler(this.saveQR_Click);
-            // 
-            // updateBtn
-            // 
-            this.updateBtn.Location = new System.Drawing.Point(121, 157);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(103, 27);
-            this.updateBtn.TabIndex = 19;
-            this.updateBtn.Text = "Изменить";
-            this.updateBtn.UseVisualStyleBackColor = true;
-            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.Location = new System.Drawing.Point(230, 157);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(103, 27);
-            this.deleteBtn.TabIndex = 20;
-            this.deleteBtn.Text = "Удалить";
-            this.deleteBtn.UseVisualStyleBackColor = true;
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
-            // 
-            // PCidBox
-            // 
-            this.PCidBox.FormattingEnabled = true;
-            this.PCidBox.Location = new System.Drawing.Point(105, 183);
-            this.PCidBox.Name = "PCidBox";
-            this.PCidBox.Size = new System.Drawing.Size(114, 24);
-            this.PCidBox.TabIndex = 15;
-            // 
-            // clearAllBoxButton
-            // 
-            this.clearAllBoxButton.Location = new System.Drawing.Point(14, 7);
-            this.clearAllBoxButton.Name = "clearAllBoxButton";
-            this.clearAllBoxButton.Size = new System.Drawing.Size(140, 27);
-            this.clearAllBoxButton.TabIndex = 21;
-            this.clearAllBoxButton.Text = "Очистить поля";
-            this.clearAllBoxButton.UseVisualStyleBackColor = true;
-            this.clearAllBoxButton.Click += new System.EventHandler(this.clearAllBoxButton_Click);
-            // 
-            // createForAllAndSave
-            // 
-            this.createForAllAndSave.Location = new System.Drawing.Point(96, 252);
-            this.createForAllAndSave.Name = "createForAllAndSave";
-            this.createForAllAndSave.Size = new System.Drawing.Size(134, 72);
-            this.createForAllAndSave.TabIndex = 16;
-            this.createForAllAndSave.Text = "Создать QR для всех ПК и сохранить";
-            this.createForAllAndSave.UseVisualStyleBackColor = true;
-            this.createForAllAndSave.Click += new System.EventHandler(this.createForAllAndSave_Click);
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 502);
             this.Controls.Add(this.tabControl1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Компьютеры МПТ";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -384,6 +421,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.QRCodeBox)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -402,7 +440,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox programmListBox;
         private System.Windows.Forms.TextBox cabinetNumBox;
         private System.Windows.Forms.TextBox OSBox;
         private System.Windows.Forms.TextBox HDDBox;
@@ -420,6 +457,9 @@
         private System.Windows.Forms.ComboBox PCidBox;
         private System.Windows.Forms.Button clearAllBoxButton;
         private System.Windows.Forms.Button createForAllAndSave;
+        public System.Windows.Forms.TextBox programmListBox;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem saveQRToolStripMenuItem;
+        private System.Windows.Forms.Button FilterButton;
     }
 }
-
